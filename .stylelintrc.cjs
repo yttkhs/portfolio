@@ -8,7 +8,7 @@ module.exports = {
     "scss/at-rule-no-unknown": [
       true,
       {
-        ignoreAtRules: ["apply", "layer", "responsive", "screen", "tailwind"],
+        ignoreAtRules: ["apply", "layer", "responsive", "screen"],
       },
     ],
   },
