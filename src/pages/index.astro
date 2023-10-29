@@ -1,7 +1,581 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import thumbnail from "../assets/thumbnail.webp";
+import ardbeg from "../assets/ardbeg.webp";
+import { Image } from "astro:assets";
 ---
 
 <Layout title="">
-  <main></main>
+  <header class="the-header">
+    <div class="the-header__wrapper">
+      <a class="the-header__logo" href="/">
+        YT<span class="the-header__logo--bold">TKHS</span>
+      </a>
+      <nav class="the-header-nav">
+        <ul class="the-header-nav__wrapper">
+          <li class="the-header-nav__item">
+            <a href="/#about">ABOUT</a>
+          </li>
+          <li class="the-header-nav__item">
+            <a href="/#contact">CONTACT</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="main-view">
+      <div class="main-view__contents">
+        <h1 class="main-view__title">
+          <span class="main-view__title--stroke">YUTA</span>
+          <span class="main-view__title--default">TAKAHASHI</span>
+        </h1>
+        <div class="main-view__caption">
+          FRONT END DEVELOPER<br />BASED IN JAPAN
+        </div>
+      </div>
+    </section>
+    <section class="about">
+      <div class="about-name">
+        <h1 class="about-name__text">
+          <span class="about-name__text--stroke">YUTA&nbsp;</span>
+          <span class="about-name__text--default">TAKAHASHI&nbsp;</span>
+        </h1>
+        <h1 class="about-name__text">
+          <span class="about-name__text--stroke">YUTA&nbsp;</span>
+          <span class="about-name__text--default">TAKAHASHI&nbsp;</span>
+        </h1>
+      </div>
+      <div class="about-content">
+        <div class="about-content__wrapper">
+          <figure class="about-thumbnail">
+            <Image
+              class="about-thumbnail__image"
+              src={thumbnail}
+              alt="Yuta Takahashi"
+            />
+          </figure>
+          <div class="about-profile">
+            <p class="about-profile__paragraph">
+              Hello. My work focuses on web application development, website
+              development, creative coding, and UX design.<br />I specialize in
+              developing web applications using modern technologies and creating
+              websites with interaction design in mind.<br />I am currently
+              working as a freelance front-end developer.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="about-detail">
+        <div class="about-detail__wrapper">
+          <div class="about-detail-heading">
+            <h2 class="about-detail-heading__text">SERVICES</h2>
+          </div>
+          <div class="about-detail-contents">
+            <ul class="about-detail-contents__list">
+              <li>WEB APPLICATION DEVELOPMENT</li>
+              <li>WEBSITE DEVELOPMENT</li>
+              <li>CREATIVE CODING</li>
+              <li>UX DESIGN</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="about-detail">
+        <div class="about-detail__wrapper">
+          <div class="about-detail-heading">
+            <h2 class="about-detail-heading__text">TECHNIQUES</h2>
+          </div>
+          <div class="about-detail-contents">
+            <p class="about-detail-contents__paragraph">
+              TypeScript / JavaScript / React / Next.js / Node.js / Three.js /
+              GSLS / HTML / CSS / Sass / SCSS / Figma / Illustrator / Photoshop
+              / After Effects
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="ardbeg">
+      <Image class="ardbeg__image" src={ardbeg} alt="ARDBEG" />
+    </section>
+    <section class="contact">
+      <div class="contact__wrapper">
+        <h2 class="contact-heading">LET’S CONNECT</h2>
+        <div class="contact-email">
+          <h3 class="contact-subhead">SEND ME A MESSAGE</h3>
+          <div class="contact-email__wrapper">
+            <a class="contact-email__link" href="mailto:contact@yttkhs.com">
+              contact@yttkhs.com
+            </a>
+          </div>
+        </div>
+        <div class="contact-sns">
+          <h2 class="contact-subhead">FOLLOW ME</h2>
+          <div class="contact-sns__wrapper">
+            <a
+              href="https://twitter.com/_yttkhs"
+              target="_blank"
+              rel="noreferrer noopener"
+              class="contact-sns__icon"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="50"
+                height="50"
+                viewBox="0 0 50 50"
+                fill="none"
+              >
+                <g clip-path="url(#clip0_44_53)">
+                  <path
+                    d="M29.2158 21.1607L47.491 0H43.1603L27.292 18.3736L14.618 0H0L19.1656 27.7841L0 49.9743H4.33088L21.0883 30.5712L34.4729 49.9743H49.0909L29.2147 21.1607H29.2158ZM23.284 28.0289L21.3421 25.2622L5.89136 3.24753H12.5433L25.0123 21.0141L26.9542 23.7807L43.1624 46.8745H36.5104L23.284 28.0299V28.0289Z"
+                    fill="white"></path>
+                </g>
+                <defs>
+                  <clipPath id="clip0_44_53">
+                    <rect width="49.0909" height="50" fill="white"></rect>
+                  </clipPath>
+                </defs>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="the-footer">
+    <div class="the-footer__wrapper">
+      <small class="the-footer__copyright">&copy; 2023 YUTA TAKAHASHI</small>
+    </div>
+  </footer>
 </Layout>
+
+<style lang="scss">
+  @import "../styles/mixin";
+
+  .the-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    height: 80px;
+    background-color: rgb(var(--color-black) 0.1);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--color-gray);
+
+    &__wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: inherit;
+      padding-right: var(--gutter-x);
+      padding-left: var(--gutter-x);
+    }
+
+    &__logo {
+      font-size: 16px;
+      font-weight: 200;
+      color: var(--color-white);
+      letter-spacing: 0.2em;
+
+      &--bold {
+        font-weight: bold;
+      }
+    }
+  }
+
+  .the-header-nav {
+    &__wrapper {
+      display: flex;
+      gap: var(--gutter-x);
+      align-items: center;
+      justify-content: center;
+    }
+
+    &__item {
+      font-size: 16px;
+      font-weight: 200;
+      color: var(--color-white);
+      letter-spacing: 0.2em;
+    }
+  }
+
+  .main-view {
+    position: relative;
+    height: 100vh;
+
+    @include media-query("md") {
+      min-height: 600px;
+    }
+
+    &__contents {
+      position: absolute;
+      bottom: 50%;
+      left: var(--gutter-x);
+      display: flex;
+      flex-direction: column;
+      gap: 3vw;
+      justify-content: flex-end;
+      transform: translateY(50%);
+
+      @include media-query("md") {
+        bottom: 8px;
+        flex-direction: row;
+        gap: 2.5vw;
+        align-items: flex-end;
+        justify-content: flex-end;
+        transform: initial;
+      }
+    }
+
+    &__title {
+      display: flex;
+      flex-direction: column;
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 23.3vw;
+      line-height: 100%;
+
+      @include media-query("md") {
+        font-size: 15vw;
+      }
+
+      &--default {
+        color: var(--color-white);
+      }
+
+      &--stroke {
+        color: transparent;
+        -webkit-text-stroke: 1px var(--color-white);
+      }
+    }
+
+    &__caption {
+      font-size: 3.7vw;
+      font-weight: 200;
+      line-height: 200%;
+      color: var(--color-white);
+
+      @include media-query("md") {
+        padding-bottom: 2vw;
+        font-size: 1.6vw;
+      }
+    }
+  }
+
+  .about {
+    position: relative;
+    min-height: 100vh;
+    padding-top: 37.2vw;
+    padding-bottom: 96px;
+
+    @include media-query("md") {
+      padding-top: 320px;
+      padding-bottom: 200px;
+    }
+  }
+
+  .about-name {
+    position: absolute;
+    top: 14.9vw;
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+    mix-blend-mode: difference;
+
+    @include media-query("md") {
+      top: 120px;
+    }
+
+    &__text {
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 37.2vw;
+      line-height: 100%;
+
+      @include media-query("md") {
+        font-size: 320px;
+      }
+
+      &:nth-child(1) {
+        animation: text-scroll 20s linear infinite;
+      }
+
+      &:nth-child(2) {
+        position: absolute;
+        top: 0;
+        left: 0;
+        animation: text-scroll 20s -10s linear infinite;
+      }
+
+      &--default {
+        color: var(--color-white);
+      }
+
+      &--stroke {
+        color: transparent;
+        -webkit-text-stroke: 1px white;
+      }
+    }
+  }
+
+  @keyframes text-scroll {
+    0% {
+      transform: translateX(100%);
+    }
+
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  .about-content {
+    &__wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: var(--gutter-x);
+      max-width: var(--container-xl);
+      padding-right: var(--gutter-x);
+      padding-left: var(--gutter-x);
+      margin-right: auto;
+      margin-left: auto;
+
+      @include media-query("md") {
+        flex-direction: row;
+      }
+    }
+  }
+
+  .about-profile {
+    @include media-query("md") {
+      width: 50%;
+      margin-top: 200px;
+    }
+
+    &__paragraph {
+      font-family: Mulish, sans-serif;
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 200%;
+      color: var(--color-white);
+
+      @include media-query("md") {
+        font-size: 32px;
+      }
+    }
+  }
+
+  .about-thumbnail {
+    @include media-query("md") {
+      width: 50%;
+    }
+
+    &__image {
+      width: 100%;
+      height: auto;
+      border-radius: 4px;
+      box-shadow: 0 0 40px 0 rgb(0 0 0 / 80%);
+    }
+  }
+
+  .about-detail {
+    margin-top: 96px;
+
+    @include media-query("md") {
+      margin-top: 200px;
+    }
+
+    &__wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: var(--gutter-x);
+      max-width: var(--container-xl);
+      padding-right: var(--gutter-x);
+      padding-left: var(--gutter-x);
+      margin-right: auto;
+      margin-left: auto;
+
+      @include media-query("md") {
+        flex-direction: row;
+      }
+    }
+  }
+
+  .about-detail-heading {
+    @include media-query("md") {
+      width: 50%;
+    }
+
+    &__text {
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 32px;
+      line-height: 150%;
+      color: var(--color-white);
+
+      @include media-query("md") {
+        font-size: 56px;
+      }
+    }
+  }
+
+  .about-detail-contents {
+    font-family: Mulish, sans-serif;
+    font-size: 16px;
+    font-weight: 200;
+    line-height: 200%;
+    color: var(--color-white);
+
+    @include media-query("md") {
+      width: 50%;
+      font-size: 24px;
+    }
+  }
+
+  .ardbeg {
+    &__image {
+      width: 100%;
+      height: 100vh;
+      object-fit: cover;
+    }
+  }
+
+  .contact {
+    &__wrapper {
+      padding-top: 96px;
+      padding-right: var(--gutter-x);
+      padding-left: var(--gutter-x);
+      margin-right: auto;
+      margin-left: auto;
+
+      @include media-query("md") {
+        padding-top: 200px;
+      }
+    }
+  }
+
+  .contact-heading {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 64px;
+    line-height: 100%;
+    color: var(--color-white);
+    text-align: center;
+
+    @include media-query("md") {
+      font-size: 200px;
+    }
+  }
+
+  .contact-subhead {
+    font-size: 16px;
+    font-weight: 200;
+    line-height: 100%;
+    color: var(--color-white);
+    text-align: center;
+
+    @include media-query("md") {
+      font-size: 32px;
+    }
+  }
+
+  .contact-email {
+    margin-top: 28px;
+
+    @include media-query("md") {
+      margin-top: 56px;
+    }
+
+    &__wrapper {
+      margin-top: 16px;
+      text-align: center;
+
+      @include media-query("md") {
+        margin-top: 36px;
+      }
+    }
+
+    &__link {
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 100%;
+      color: var(--color-white);
+      text-decoration-line: underline;
+
+      @include media-query("md") {
+        font-size: 56px;
+      }
+    }
+  }
+
+  .contact-sns {
+    margin-top: 40px;
+
+    @include media-query("md") {
+      margin-top: 96px;
+    }
+
+    &__wrapper {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      margin-top: 16px;
+
+      @include media-query("md") {
+        gap: 16px;
+        margin-top: 36px;
+      }
+    }
+
+    &__icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 56px;
+      height: 56px;
+      border: 1px solid var(--color-white);
+      border-radius: 4px;
+
+      @include media-query("md") {
+        width: 120px;
+        height: 120px;
+      }
+
+      svg {
+        width: 24px;
+        height: auto;
+
+        @include media-query("md") {
+          width: 50px;
+        }
+      }
+    }
+  }
+
+  .the-footer {
+    padding-top: 96px;
+    padding-bottom: 32px;
+
+    @include media-query("md") {
+      padding-top: 200px;
+      padding-bottom: 56px;
+    }
+
+    &__wrapper {
+      max-width: var(--container-xl);
+      padding-right: var(--gutter-x);
+      padding-left: var(--gutter-x);
+      margin-right: auto;
+      margin-left: auto;
+      text-align: center;
+    }
+
+    &__copyright {
+      font-size: 12px;
+      font-weight: 200;
+      line-height: 100%;
+      color: var(--color-white);
+
+      @include media-query("md") {
+        font-size: 16px;
+      }
+    }
+  }
+</style>

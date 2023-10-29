@@ -20,10 +20,34 @@ const { title, description } = Astro.props;
     <slot />
   </body>
 </html>
-<style is:global>
-  .container {
-    max-width: 800px;
-    padding: 0 1rem;
-    margin: 0 auto;
+
+<style is:global lang="scss">
+  @import "https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap";
+  @import "https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Mulish:wght@200;300;400;500;600;700;800;900;1000&display=swap";
+  @import "../styles/mixin";
+
+  :root {
+    --color-white: #fff;
+    --color-black: #151515;
+    --color-gray: #1f1f1f;
+    --gutter-x: 32px;
+    --container-sm: 576px;
+    --container-md: 768px;
+    --container-lg: 1280px;
+    --container-xl: 1440px;
+    --container-2xl: 1920px;
+
+    @include media-query("md") {
+      --gutter-x: 48px;
+    }
+
+    font-family: Mulish, sans-serif;
+    color: var(--color-white);
+    background-color: var(--color-black);
+  }
+
+  *::selection {
+    color: var(--color-black);
+    background-color: var(--color-white);
   }
 </style>

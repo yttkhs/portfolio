@@ -14,6 +14,7 @@ module.exports = {
     ecmaVersion: "latest",
     sourceType: "module",
   },
+  ignorePatterns: ["**/*.scss"],
   overrides: [
     {
       // Define the configuration for `.astro` file.
